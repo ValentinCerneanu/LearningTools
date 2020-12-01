@@ -9,6 +9,9 @@
     </head>
     <body>
         <div id="content">
+            <div class="header">
+                <span class="header-text">Learning And Teaching Tools</span>
+            </div>
             <nav>
                 <ul>
                     <a href="index.jsp">Home</a>

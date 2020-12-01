@@ -28,10 +28,6 @@ public class ListView extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) {
         try {
-            String error = "";
-            if (request.getAttribute("LOGIN_ERROR") != null) {
-                error = (String) request.getAttribute("LOGIN_ERROR");
-            }
 
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html>\n"
@@ -45,8 +41,7 @@ public class ListView extends HttpServlet {
                     + "    <body>\n"
                     + "        <div id=\"content\">\n"
                     + "        <div class=\"header\">\n"
-                    + "            <img src=\"./img/companyLogo.jpg\" width=\"100px\"  />\n"
-                    + "            <span class=\"header-text\">COMPANY NAME</span>\n"
+                    + "            <span class=\"header-text\">Learning And Teaching Tools</span>\n"
                     + "        </div>\n"
                     + "        <nav>\n"
                     + "            <ul>\n"
@@ -55,19 +50,9 @@ public class ListView extends HttpServlet {
                     + "                    <a href=\"AddView\">Add new tool</a>\n"
                     + "            </ul>\n"
                     + "        </nav>\n"
-                    + "            <h1>Add new tool form</h1>   \n"
-+"<a href=\"RegistrationView\">Register</a>\n");
+                    + "            <h1>List of tools</h1>   \n");
 
-            if (!"".equals(error)) {
-                out.println("<div class=\"error\">" + error + "</div>");
-            }
-            out.println("                <div class=\"form-element\">\n"
-                    + "                      <input type=\"submit\" value=\"Submit\">\n"
-                    + "                    <input type=\"reset\" value=\"Reset\">\n"
-                    + "                </div>\n"
-                    + "            </form>\n"
-                    + "        </div>\n"
-                    + "    </body>\n"
+            out.println("    </body>\n"
                     + "</html>\n");
         } catch (IOException e) {
             e.printStackTrace();
