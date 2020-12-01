@@ -42,7 +42,7 @@ public class ListController extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             SAXParser saxParser = new SAXParser();
-            NodeList nodesEx1 = saxParser.parse("tools.xml", "/document/reference", XPathConstants.NODESET);
+            NodeList nodesEx1 = saxParser.parse("tools.xml", "/", XPathConstants.NODESET);
             for (int i = 0; i < nodesEx1.getLength(); i++) {
                 System.out.println(nodesEx1.item(i).getAttributes().getNamedItem("href").getNodeValue());
             }
