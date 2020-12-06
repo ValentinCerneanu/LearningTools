@@ -1,4 +1,4 @@
-<?xml-stylesheet type="text/xsl" href="script.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="checkType.xsl" ?>
 <tools>
     <tool id="1">
         <category>web resource (videos)</category>

@@ -11,23 +11,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import model.Tool;
+import javax.servlet.annotation.WebServlet;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import util.SAXParser;
+import org.w3c.dom.*;
+import util.XmlParser;
 
 /**
  *
  * @author Valentin
  */
-
+@WebServlet(name = "ListController")
 public class ListController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,25 +36,26 @@ public class ListController extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            SAXParser saxParser = new SAXParser();
-            NodeList nodesEx1 = saxParser.parse("tools.xml", "/", XPathConstants.NODESET);
-            for (int i = 0; i < nodesEx1.getLength(); i++) {
-                System.out.println(nodesEx1.item(i).getAttributes().getNamedItem("href").getNodeValue());
+            XmlParser xmlParser = XmlParser.getInstance();
+            //Task no 3 Read in memory the list of tools from your local XML file
+            NodeList tools = xmlParser.getTools();
+            
+            for (int i = 0; i < tools.getLength(); i++) {
+                Node toolNode = tools.item(i);
+                System.out.println("\nCurrent Element :" + toolNode.getNodeName());
+                if (toolNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element toolElement = (Element) toolNode;
+                    System.out.println("id: " + toolElement.getAttribute("id"));
+                    
+                    System.out.println("category: " + toolElement.getElementsByTagName("category").item(0).getTextContent());
+                    System.out.println("type: " + toolElement.getElementsByTagName("type").item(0).getTextContent());
+                }
             }
-     
-        } catch (XPathExpressionException ex) {
-            Logger.getLogger(ListController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(ListController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SAXException ex) {
+            request.getSession().setAttribute("tools", tools);
+            RequestDispatcher rd = request.getRequestDispatcher("ListView");
+            rd.forward(request, response);
+        } catch (Exception ex) {
             Logger.getLogger(ListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        Tool tool = new Tool(1, "description", "url");
-        request.getSession().setAttribute("tool", tool);
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-        rd.forward(request, response);
-       
-
     }
 }

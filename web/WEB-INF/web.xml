@@ -13,6 +13,10 @@
         <url-pattern>/AddView</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ListController</servlet-name>
+        <url-pattern>/ListController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ListView</servlet-name>
         <url-pattern>/ListView</url-pattern>
     </servlet-mapping>

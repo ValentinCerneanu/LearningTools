@@ -15,7 +15,7 @@
             <nav>
                 <ul>
                     <a href="index.jsp">Home</a>
-                    <a href="ListView">List of tools</a>
+                    <a href="ListController">List of tools</a>
                     <a href="AddView">Add new tool</a>
                 </ul>
             </nav>
