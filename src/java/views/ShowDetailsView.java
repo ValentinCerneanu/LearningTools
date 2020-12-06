@@ -17,16 +17,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 import util.XmlParser;
 
 /**
  *
  * @author Valentin
  */
-public class ListView extends HttpServlet {
-
+public class ShowDetailsView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -38,17 +44,24 @@ public class ListView extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) {
         
         try {
-            // Task no 5 Display on your web interface the list of tools from your local XML
-            File xml = new File("xml/tools.xml");
-            File xsl = new File("xml/checkType.xsl");
+            // Task no 6 Allow the user to see all the information for a specific tool. Use XPATH/ XQuery
+            XPathFactory xPathfactory = XPathFactory.newInstance();
+            XPath xpath = xPathfactory.newXPath();
+            XPathExpression expr = xpath.compile(String.format("/tools/tool[@id='%s']", request.getParameter("id")));
+            
+            XmlParser xmlParser = XmlParser.getInstance();
+            
+            NodeList tools = (NodeList) expr.evaluate(xmlParser.getDocument(), XPathConstants.NODESET);
+            Document newDocument = xmlParser.createXmlFromNodeList(tools);
+            
+            File xsl = new File("xml/showDetails.xsl");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             StreamSource style = new StreamSource(xsl);
             Transformer transformer = transformerFactory.newTransformer(style);
             
-            StreamSource source = new StreamSource (xml);
             StringWriter writer = new StringWriter();
             StreamResult result = new StreamResult(writer);
-            transformer.transform(source, result);
+            transformer.transform(new DOMSource(newDocument), result);
            
             PrintWriter out = response.getWriter();
             
@@ -56,7 +69,7 @@ public class ListView extends HttpServlet {
                     + "<html>\n"
                     + "    <head>\n"
                     + "        <link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\"/>\n"
-                    + "        <title>ListTools</title>\n"
+                    + "        <title>Show Details</title>\n"
                     + "        <meta charset=\"UTF-8\">\n"
                     + "        <meta name=\"viewport\" content=\"width=device-width\">\n"
                     + "    </head>\n"
@@ -72,7 +85,7 @@ public class ListView extends HttpServlet {
                     + "                    <a href=\"AddView\">Add new tool</a>\n"
                     + "            </ul>\n"
                     + "        </nav>\n"
-                    + "            <h1>List of tools</h1>   \n");
+                    + "            <h1>Details for</h1>   \n");
             out.println(writer.toString());
             out.println("    </body>\n"
                     + "</html>\n");

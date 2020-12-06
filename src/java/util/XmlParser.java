@@ -41,10 +41,31 @@ public class XmlParser {
         }
     }
     
+    public Document getDocument(){
+        return this.document;
+    }
+    
     public NodeList getTools(){
         try {
-            NodeList tools = document.getElementsByTagName("tool");
+            NodeList tools = this.document.getElementsByTagName("tool");
             return tools;
+        } catch (Exception ex) {
+            Logger.getLogger(XmlParser.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    public Document createXmlFromNodeList(NodeList nodeList){
+        try {
+            Document newXmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+            Element root = newXmlDocument.createElement("tools");
+            newXmlDocument.appendChild(root);
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Node node = nodeList.item(i);
+                Node copyNode = newXmlDocument.importNode(node, true);
+                root.appendChild(copyNode);
+            }
+            return newXmlDocument;
         } catch (Exception ex) {
             Logger.getLogger(XmlParser.class.getName()).log(Level.SEVERE, null, ex);
             return null;

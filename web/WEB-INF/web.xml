@@ -8,6 +8,22 @@
         <servlet-name>ListView</servlet-name>
         <servlet-class>views.ListView</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShowDetailsView</servlet-name>
+        <servlet-class>views.ShowDetailsView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowDetailsController</servlet-name>
+        <servlet-class>controllers.ShowDetailsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowDetailsView</servlet-name>
+        <url-pattern>/ShowDetailsView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowDetailsController</servlet-name>
+        <url-pattern>/ShowDetailsController</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddView</servlet-name>
         <url-pattern>/AddView</url-pattern>

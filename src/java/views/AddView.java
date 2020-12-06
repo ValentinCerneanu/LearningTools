@@ -8,7 +8,6 @@ package views;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +34,7 @@ public class AddView extends HttpServlet {
                     + "<html>\n"
                     + "    <head>\n"
                     + "        <link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\"/>\n"
-                    + "        <title>Login</title>\n"
+                    + "        <title>Add Tool</title>\n"
                     + "        <meta charset=\"UTF-8\">\n"
                     + "        <meta name=\"viewport\" content=\"width=device-width\">\n"
                     + "    </head>\n"
