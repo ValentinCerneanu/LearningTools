@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="checkType.xsl" ?>
 <tools>
-    <tool id="1">
+    <tool>
         <category>web resource (videos)</category>
         <type>learning</type>
         <name>YouTube</name>
@@ -15,7 +15,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/youtube/</url>
     </tool>
-    <tool id="2">
+    <tool>
         <category>video meeting platform</category>
         <type>teaching</type>
         <name>Zoom</name>
@@ -30,7 +30,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/zoom/</url>
     </tool>
-    <tool id="3">
+    <tool>
         <category>search engine</category>
         <type>learning</type>
         <name>Google Search</name>
@@ -45,7 +45,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/google-search/</url>
     </tool>
-    <tool id="4">
+    <tool>
         <category>office tool / suite</category>
         <type>teaching</type>
         <name>PowerPoint</name>
@@ -60,7 +60,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/powerpoint/</url>
     </tool>
-    <tool id="5">
+    <tool>
         <category>collaboration platform</category>
         <type>teaching</type>
         <name>Microsoft Teams</name>
@@ -75,7 +75,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/microsoft-teams/</url>
     </tool>
-    <tool id="6">
+    <tool>
         <category>office tool / suite</category>
         <type>teaching</type>
         <name>Word</name>
@@ -90,7 +90,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/word/</url>
     </tool>
-    <tool id="7">
+    <tool>
         <category>office suite | file sharing platform</category>
         <type>teaching</type>
         <name>Google Docs &amp; Drive</name>
@@ -105,7 +105,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/google-docs-drive/</url>
     </tool>
-    <tool id="8">
+    <tool>
         <category>social network / community</category>
         <type>teaching</type>
         <name>LinkedIn</name>
@@ -120,7 +120,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/linkedin/</url>
     </tool>
-    <tool id="9">
+    <tool>
         <category>social network / community</category>
         <type>teaching</type>
         <name>Twitter</name>
@@ -135,7 +135,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/twitter/</url>
     </tool>
-    <tool id="10">
+    <tool>
         <category>chat tool</category>
         <type>learning</type>
         <name>WhatsApp</name>
@@ -150,7 +150,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/whatsapp/</url>
     </tool>
-    <tool id="11">
+    <tool>
         <category>web resource</category>
         <type>learning</type>
         <name>Wikipedia</name>
@@ -165,7 +165,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/wikipedia/</url>
     </tool>
-    <tool id="12">
+    <tool>
         <category>social network / community</category>
         <type>teaching</type>
         <name>Facebook</name>
@@ -180,7 +180,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/facebook/</url>
     </tool>
-    <tool id="13">
+    <tool>
         <category>office tool / suite</category>
         <type>teaching</type>
         <name>Excel</name>
@@ -195,7 +195,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/excel/</url>
     </tool>
-    <tool id="14">
+    <tool>
         <category>blogging/website platform</category>
         <type>teaching</type>
         <name>WordPress</name>
@@ -210,7 +210,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/wordpress/</url>
     </tool>
-    <tool id="15">
+    <tool>
         <category>learning platform / LMS</category>
         <type>teaching</type>
         <name>Google Classroom</name>
@@ -225,7 +225,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/google-classroom/</url>
     </tool>
-    <tool id="16">
+    <tool>
         <category>video meeting platform</category>
         <type>teaching</type>
         <name>Google Meet</name>
@@ -240,7 +240,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/google-hangouts/</url>
     </tool>
-    <tool id="17">
+    <tool>
         <category>collaboration platform</category>
         <type>teaching</type>
         <name>Slack</name>
@@ -255,7 +255,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/slack/</url>
     </tool>
-    <tool id="18">
+    <tool>
         <category>content dev tool (graphics)</category>
         <type>learning</type>
         <name>Canva</name>
@@ -270,7 +270,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/canva/</url>
     </tool>
-    <tool id="19">
+    <tool>
         <category>chat tool</category>
         <type>teaching</type>
         <name>Skype</name>
@@ -285,7 +285,7 @@
         <author></author>
         <url>https://www.toptools4learning.com/skype/</url>
     </tool>
-    <tool id="20">
+    <tool>
         <category>collaboration platform</category>
         <type>teaching</type>
         <name>Trello</name>

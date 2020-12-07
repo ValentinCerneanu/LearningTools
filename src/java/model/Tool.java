@@ -13,43 +13,49 @@ import java.util.ArrayList;
  * @author Valentin
  */
 public class Tool {
-    private int id;
+    //private int id;
     private String name;
     private String description;
     private String url;
     private String type;
     private String category;
-    private boolean isWebBased;
-    private boolean isFree;
-    private ArrayList<String> subjects;
+    private String webBased;
+    private String price;
+    private String subjects;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     private String author;
 
-    public Tool(int id, String description, String url) {
-        this.id = id;
+    public Tool(String description, String url) {
         this.description = description;
         this.url = url;
     }
     
-    public Tool(int id, String name, String description, String url, String type, String category, boolean isWebBased, boolean isFree, ArrayList<String> subjects, String author) {
-        this.id = id;
+    public Tool(String name, String description, String url, String type, String category, boolean isWebBased, String price, String subjects, String author){
         this.name = name;
         this.description = description;
         this.url = url;
         this.type = type;
         this.category = category;
-        this.isWebBased = isWebBased;
-        this.isFree = isFree;
+        this.webBased = webBased;
+        this.price = price;
         this.subjects = subjects;
         this.author = author;
     }
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getDescription() {
         return description;
@@ -83,27 +89,27 @@ public class Tool {
         this.category = category;
     }
 
-    public boolean isIsWebBased() {
-        return isWebBased;
+    public String getPrice() {
+        return price;
     }
 
-    public void setIsWebBased(boolean isWebBased) {
-        this.isWebBased = isWebBased;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public boolean isIsFree() {
-        return isFree;
+    public String getWebBased() {
+        return webBased;
     }
 
-    public void setIsFree(boolean isFree) {
-        this.isFree = isFree;
+    public void setWebBased(String webBased) {
+        this.webBased = webBased;
     }
 
-    public ArrayList<String> getSubjects() {
+    public String getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(ArrayList<String> subjects) {
+    public void setSubjects(String subjects) {
         this.subjects = subjects;
     }
 
