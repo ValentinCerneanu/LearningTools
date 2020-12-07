@@ -45,6 +45,10 @@ public class XmlParser {
         return this.document;
     }
     
+    public void setXml(Document doc){
+        this.document=doc;
+    }
+    
     public NodeList getTools(){
         try {
             NodeList tools = this.document.getElementsByTagName("tool");

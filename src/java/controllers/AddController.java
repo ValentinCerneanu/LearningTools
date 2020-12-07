@@ -24,7 +24,7 @@ import util.XmlParser;
  *
  * @author Valentin
  */
-@WebServlet(name = "ListController")
+@WebServlet(name = "AddController")
 public class AddController extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
@@ -77,6 +77,8 @@ public class AddController extends HttpServlet{
                 subject.insertBefore(doc.createTextNode(s), subject.getLastChild());
                 subjects.insertBefore(subject, subjects.getLastChild());
             }
+            
+            xmlParser.setXml(doc);
             //request.getSession().setAttribute("tools", tools);
             RequestDispatcher rd = request.getRequestDispatcher("ListView");
             rd.forward(request, response);

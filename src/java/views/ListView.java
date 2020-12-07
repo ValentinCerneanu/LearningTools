@@ -17,8 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import org.w3c.dom.Document;
 import util.XmlParser;
 
 /**
@@ -45,11 +47,14 @@ public class ListView extends HttpServlet {
             StreamSource style = new StreamSource(xsl);
             Transformer transformer = transformerFactory.newTransformer(style);
             
+            Document newDocument = XmlParser.getInstance().getDocument();
+            
+            
             StreamSource source = new StreamSource (xml);
             StringWriter writer = new StringWriter();
             StreamResult result = new StreamResult(writer);
-            transformer.transform(source, result);
-           
+            transformer.transform(new DOMSource(newDocument), result);
+            
             PrintWriter out = response.getWriter();
             
             out.println("<!DOCTYPE html>\n"
