@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Tool {
     private int id;
+    private String name;
     private String description;
     private String url;
     private String type;
@@ -29,8 +30,9 @@ public class Tool {
         this.url = url;
     }
     
-    public Tool(int id, String description, String url, String type, String category, boolean isWebBased, boolean isFree, ArrayList<String> subjects, String author) {
+    public Tool(int id, String name, String description, String url, String type, String category, boolean isWebBased, boolean isFree, ArrayList<String> subjects, String author) {
         this.id = id;
+        this.name = name;
         this.description = description;
         this.url = url;
         this.type = type;

@@ -5,10 +5,14 @@
  */
 package controllers;
 
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
 /**
  *
  * @author Valentin
  */
-public class AddController {
+@WebServlet(name = "ListController")
+public class AddController extends HttpServlet{
     
 }
